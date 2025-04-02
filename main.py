@@ -16,14 +16,13 @@ prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | model
 
 while True:
-    print("*"*30)
+    print("*-"*30)
     question = input("ask your question : ")
     if(question == "q"):
         break
-    
+    reviews = retriever.invoke(question)
     result = chain.invoke({
-        "reviews": [],
+        "reviews": reviews,
         "question": question
     })
-
     print(result)
