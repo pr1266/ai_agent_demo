@@ -1,6 +1,7 @@
 import os
 from langchain_ollama.llms import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
+from vector import retriever
 os.system("cls")
 
 model = OllamaLLM(model="llama3:8b")
